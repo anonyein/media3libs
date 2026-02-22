@@ -8,14 +8,9 @@ GD_PATH="${MEDIA3_PATH}/libraries/decoder_iamf/build.gradle"
 ## Fetch libiamf
 cd "${IAMF_MODULE_PATH}/jni"
 git clone https://github.com/AOMediaCodec/iamf-tools.git iamf_tools 
-cd iamf_tools 
-git reset --hard de364b983
 
 cd "${IAMF_MODULE_PATH}/jni"
 ./build_iamf_tools.sh ${IAMF_MODULE_PATH}
-
-
-
 
 ## Enable publishing
 
