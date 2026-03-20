@@ -64,11 +64,11 @@ jobs:
         run: |
           FILE="${{ github.workspace }}/media/libraries/exoplayer_hls/src/main/java/androidx/media3/exoplayer/hls/HlsMediaChunk.java"
           sed -i '/long bytesToRead = dataSource.open(dataSpec);/c\
-              long bytesToRead = 0L;
-              try {
-                bytesToRead = dataSource.open(dataSpec);
-              } catch (Exception ignored) {
-              }' "$FILE"
+                long bytesToRead = 0L;\
+                try {\
+                  bytesToRead = dataSource.open(dataSpec);\
+                } catch (Exception ignored) {\
+                }' "$FILE"
       
       # Build 
       - name: Build
