@@ -59,6 +59,17 @@ jobs:
           ndk-version: r28c
           local-cache: false
           add-to-path: true
+
+      - name: Patch HlsMediaChunk.java
+        run: |
+          FILE="${{ github.workspace }}/media/libraries/exoplayer_hls/src/main/java/androidx/media3/exoplayer/hls/HlsMediaChunk.java"
+          sed -i '/long bytesToRead = dataSource.open(dataSpec);/c\
+              long bytesToRead = 0L;
+              try {
+                bytesToRead = dataSource.open(dataSpec);
+              } catch (Exception ignored) {
+              }' "$FILE"
+      
       # Build 
       - name: Build
         continue-on-error: false
@@ -72,9 +83,6 @@ jobs:
          
          echo "Build Success"
         
-
-
-
       # Runs a set of commands using the runners shell
       - name: Upload FFmpeg Static Libs
         continue-on-error: true
