@@ -62,22 +62,13 @@ jobs:
 
       - name: Patch HlsMediaChunk.java
         run: |
-          FILE="${GITHUB_WORKSPACE}/media/libraries/exoplayer_hls/src/main/java/androidx/media3/exoplayer/hls/HlsMediaChunk.java"
-
-          # 1. 保护 prepareExtraction 中的 dataSource.open（原补丁）
+          FILE="${{ github.workspace }}/media/libraries/exoplayer_hls/src/main/java/androidx/media3/exoplayer/hls/HlsMediaChunk.java"
           sed -i '/long bytesToRead = dataSource.open(dataSpec);/c\
-          long bytesToRead = 0L;\
-          try {\
-            bytesToRead = dataSource.open(dataSpec);\
-          } catch (Exception ignored) {\
-          }' "$FILE"
-
-          # 2. 保护 feedDataToExtractor 中的提取循环（新增）
-          sed -i '/catch (EOFException e) {/,/^        }/{
-          /^        }/a\
-          } catch (Exception e) {\
-              throw new IOException("Unexpected error in feedDataToExtractor", e);
-          }' "$FILE"
+                long bytesToRead = 0L;\
+                try {\
+                  bytesToRead = dataSource.open(dataSpec);\
+                } catch (Exception ignored) {\
+                }' "$FILE"
       
       # Build 
       - name: Build
