@@ -61,6 +61,7 @@ jobs:
           add-to-path: true
 
       - name: Patch HlsMediaChunk.java
+        shell: bash
         run: |
           FILE="${GITHUB_WORKSPACE}/media/libraries/exoplayer_hls/src/main/java/androidx/media3/exoplayer/hls/HlsMediaChunk.java"
 
@@ -68,13 +69,17 @@ jobs:
           perl -i -pe 's/long bytesToRead = dataSource.open\(dataSpec\);/long bytesToRead = 0L;\n            try {\n                bytesToRead = dataSource.open(dataSpec);\n            } catch (Exception ignored) {\n            }/' "$FILE"
 
           # 补丁2：保护 feedDataToExtractor 的提取循环
-          perl -i -0777 -pe 's/(catch \(EOFException e\) \{.*?extractor\.onTruncatedSegmentParsed.*?\n        \})/\1\n        } catch (Exception e) {\n            throw new IOException("Unexpected error in feedDataToExtractor", e);/s' "$FILE"
+          INSERT_LINE1='      } catch (Exception e) {'
+          INSERT_LINE2='        throw new IOException("Unexpected error in feedDataToExtractor", e);'
+          sed -i "/nextLoadPosition = (int) (input.getPosition() - dataSpec.position);/i\\
+          $INSERT_LINE1\\
+          $INSERT_LINE2" "$FILE"
 
-          # 验证补丁数量（原文件无 catch(Exception e)，补丁后应恰好1处）
-          if [ $(grep -c 'catch (Exception e)' "$FILE") -eq 1 ]; then
-            echo "Patch applied successfully."
+          # 验证
+          if grep -c 'catch (Exception e)' "$FILE" | grep -q 1; then
+            echo "Patch 2 applied successfully."
           else
-            echo "ERROR: Patch count mismatch!" >&2
+            echo "ERROR: Patch 2 not applied or duplicated!" >&2
             exit 1
           fi
       
