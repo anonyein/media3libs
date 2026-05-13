@@ -62,13 +62,21 @@ jobs:
 
       - name: Patch HlsMediaChunk.java
         run: |
-          FILE="${{ github.workspace }}/media/libraries/exoplayer_hls/src/main/java/androidx/media3/exoplayer/hls/HlsMediaChunk.java"
-          sed -i '/long bytesToRead = dataSource.open(dataSpec);/c\
-                long bytesToRead = 0L;\
-                try {\
-                  bytesToRead = dataSource.open(dataSpec);\
-                } catch (Exception ignored) {\
-                }' "$FILE"
+          FILE="${GITHUB_WORKSPACE}/media/libraries/exoplayer_hls/src/main/java/androidx/media3/exoplayer/hls/HlsMediaChunk.java"
+
+          # 补丁1：保护 prepareExtraction 中的 dataSource.open
+          perl -i -pe 's/long bytesToRead = dataSource.open\(dataSpec\);/long bytesToRead = 0L;\n            try {\n                bytesToRead = dataSource.open(dataSpec);\n            } catch (Exception ignored) {\n            }/' "$FILE"
+
+          # 补丁2：保护 feedDataToExtractor 的提取循环
+          perl -i -0777 -pe 's/(catch \(EOFException e\) \{.*?extractor\.onTruncatedSegmentParsed.*?\n        \})/\1\n        } catch (Exception e) {\n            throw new IOException("Unexpected error in feedDataToExtractor", e);/s' "$FILE"
+
+          # 验证补丁数量（原文件无 catch(Exception e)，补丁后应恰好1处）
+          if [ $(grep -c 'catch (Exception e)' "$FILE") -eq 1 ]; then
+            echo "Patch applied successfully."
+          else
+            echo "ERROR: Patch count mismatch!" >&2
+            exit 1
+          fi
       
       # Build 
       - name: Build
@@ -106,7 +114,3 @@ jobs:
           tags: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: 'repo'
-
-        
-
-       
