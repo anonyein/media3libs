@@ -63,25 +63,8 @@ jobs:
       - name: Patch HlsMediaChunk.java
         shell: bash
         run: |
-          FILE="${GITHUB_WORKSPACE}/media/libraries/exoplayer_hls/src/main/java/androidx/media3/exoplayer/hls/HlsMediaChunk.java"
-
-          # 补丁1：保护 prepareExtraction 中的 dataSource.open
-          perl -i -pe 's/long bytesToRead = dataSource.open\(dataSpec\);/long bytesToRead = 0L;\n            try {\n                bytesToRead = dataSource.open(dataSpec);\n            } catch (Exception ignored) {\n            }/' "$FILE"
-
-          # 补丁2：在 feedDataToExtractor 的 catch (EOFException) 块后插入 catch (Exception)
-          perl -i -0777 -pe 's/
-            (\Q      } catch (EOFException e) {\E
-            .*?
-            \n\Q      }\E)                     # 匹配整个 catch (EOFException e) { ... }
-          /$1\n      } catch (Exception e) {\n        throw new IOException("Unexpected error in feedDataToExtractor", e);/sx' "$FILE"
-
-          # 验证
-          if grep -c 'catch (Exception e)' "$FILE" | grep -q 1; then
-            echo "Both patches applied successfully."
-          else
-            echo "ERROR: Patches not applied correctly!" >&2
-            exit 1
-          fi
+          chmod +x ${GITHUB_WORKSPACE}/.github/scripts/patch_media3.sh
+          bash ${GITHUB_WORKSPACE}/.github/scripts/patch_media3.sh
       
       # Build 
       - name: Build
