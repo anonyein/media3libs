@@ -5,7 +5,7 @@ echo "Build AV1"
 
 
 AV1_MODULE_PATH="${MEDIA3_PATH}/libraries/decoder_av1/src/main"
-GD_PATH="${MEDIA3_PATH}/libraries/decoder_av1/build.gradle"
+GD_PATH="${MEDIA3_PATH}/libraries/decoder_av1/build.gradle.kts"
 
 #Fetch cpu_features library:
 
@@ -31,18 +31,16 @@ HOST_PLATFORM="linux-x86_64"
 ## Enable publishing
 echo "
 android {
-    namespace 'androidx.media3.decoder.av1'
+    namespace = \"androidx.media3.decoder.av1\"
 
     publishing {
-        singleVariant('release') {
+        singleVariant(\"release\") {
             withSourcesJar()
         }
     }
 }
-ext {
-     releaseArtifactId = 'media3-decode-av1'
-     releaseName = 'Media3 av1 module'
-     }
-     apply from: '../../publish.gradle'
+extra[\"releaseArtifactId\"] = \"media3-decode-av1\"
+extra[\"releaseName\"] = \"Media3 av1 module\"
+apply(from = \"../../publish.gradle.kts\")
 ">>"${GD_PATH}"
 

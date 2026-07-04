@@ -3,7 +3,7 @@
 echo "Build Vp9"
 
 VP9_MODULE_PATH="${MEDIA3_PATH}/libraries/decoder_vp9/src/main"
-GD_PATH="${MEDIA3_PATH}/libraries/decoder_vp9/build.gradle"
+GD_PATH="${MEDIA3_PATH}/libraries/decoder_vp9/build.gradle.kts"
 
 
 cd "${VP9_MODULE_PATH}/jni"
@@ -19,17 +19,15 @@ ${NDK_PATH}/ndk-build APP_ABI=all -j4
 ## Enable publishing
 echo "
 android {
-    namespace 'androidx.media3.decoder.vp9'
+    namespace = \"androidx.media3.decoder.vp9\"
 
     publishing {
-        singleVariant('release') {
+        singleVariant(\"release\") {
             withSourcesJar()
         }
     }
 }
-ext {
-     releaseArtifactId = 'media3-decode-vp9'
-     releaseName = 'Media3 vp9 module'
-     }
-     apply from: '../../publish.gradle'
+extra[\"releaseArtifactId\"] = \"media3-decode-vp9\"
+extra[\"releaseName\"] = \"Media3 vp9 module\"
+apply(from = \"../../publish.gradle.kts\")
 ">>"${GD_PATH}"

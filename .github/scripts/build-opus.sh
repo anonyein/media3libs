@@ -3,7 +3,7 @@
 echo "Build Opus"
 
 OPUS_MODULE_PATH="${MEDIA3_PATH}/libraries/decoder_opus/src/main"
-GD_PATH="${MEDIA3_PATH}/libraries/decoder_opus/build.gradle"
+GD_PATH="${MEDIA3_PATH}/libraries/decoder_opus/build.gradle.kts"
 
 
 #Fetch libopus:
@@ -14,17 +14,15 @@ git clone --depth=1 https://gitlab.xiph.org/xiph/opus.git libopus
 ## Enable publishing
 echo "
 android {
-    namespace 'androidx.media3.decoder.opus'
+    namespace = \"androidx.media3.decoder.opus\"
 
     publishing {
-        singleVariant('release') {
+        singleVariant(\"release\") {
             withSourcesJar()
         }
     }
 }
-ext {
-     releaseArtifactId = 'media3-decode-opus'
-     releaseName = 'Media3 opus module'
-     }
-     apply from: '../../publish.gradle'
+extra[\"releaseArtifactId\"] = \"media3-decode-opus\"
+extra[\"releaseName\"] = \"Media3 opus module\"
+apply(from = \"../../publish.gradle.kts\")
 ">>"${GD_PATH}"

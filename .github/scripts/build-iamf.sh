@@ -3,7 +3,7 @@
 echo "Build IAMF"
 
 IAMF_MODULE_PATH="${MEDIA3_PATH}/libraries/decoder_iamf/src/main"
-GD_PATH="${MEDIA3_PATH}/libraries/decoder_iamf/build.gradle"
+GD_PATH="${MEDIA3_PATH}/libraries/decoder_iamf/build.gradle.kts"
 
 ## Fetch libiamf
 cd "${IAMF_MODULE_PATH}/jni"
@@ -16,17 +16,15 @@ cd "${IAMF_MODULE_PATH}/jni"
 
 echo "
 android {
-    namespace 'androidx.media3.decoder.iamf'
+    namespace = \"androidx.media3.decoder.iamf\"
 
     publishing {
-        singleVariant('release') {
+        singleVariant(\"release\") {
             withSourcesJar()
         }
     }
 }
-ext {
-     releaseArtifactId = 'media3-decode-iamf'
-     releaseName = 'Media3 iamf module'
-     }
-     apply from: '../../publish.gradle'
+extra[\"releaseArtifactId\"] = \"media3-decode-iamf\"
+extra[\"releaseName\"] = \"Media3 iamf module\"
+apply(from = \"../../publish.gradle.kts\")
 ">>"${GD_PATH}"

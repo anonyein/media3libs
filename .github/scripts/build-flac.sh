@@ -3,7 +3,7 @@
 echo "Build Flac"
 
 FLAC_MODULE_PATH="${MEDIA3_PATH}/libraries/decoder_flac/src/main"
-GD_PATH="${MEDIA3_PATH}/libraries/decoder_flac/build.gradle"
+GD_PATH="${MEDIA3_PATH}/libraries/decoder_flac/build.gradle.kts"
 
 
 ## Fetch libflac
@@ -18,17 +18,15 @@ git clone --depth=1  https://github.com/xiph/flac.git libflac
 
 echo "
 android {
-    namespace 'androidx.media3.decoder.flac'
+    namespace = \"androidx.media3.decoder.flac\"
 
     publishing {
-        singleVariant('release') {
+        singleVariant(\"release\") {
             withSourcesJar()
         }
     }
 }
-ext {
-     releaseArtifactId = 'media3-decode-flac'
-     releaseName = 'Media3 flac module'
-     }
-     apply from: '../../publish.gradle'
+extra[\"releaseArtifactId\"] = \"media3-decode-flac\"
+extra[\"releaseName\"] = \"Media3 flac module\"
+apply(from = \"../../publish.gradle.kts\")
 ">>"${GD_PATH}"
