@@ -17,17 +17,6 @@ ${NDK_PATH}/ndk-build APP_ABI=all -j4
 
 
 ## Enable publishing
-echo "
-android {
-    namespace = \"androidx.media3.decoder.vp9\"
-
-    publishing {
-        singleVariant(\"release\") {
-            withSourcesJar()
-        }
-    }
-}
-extra[\"releaseArtifactId\"] = \"media3-decode-vp9\"
-extra[\"releaseName\"] = \"Media3 vp9 module\"
-apply(from = \"../../publish.gradle.kts\")
-">>"${GD_PATH}"
+echo '
+apply(plugin = "media3.publish")
+'>>"${GD_PATH}"

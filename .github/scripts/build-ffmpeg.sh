@@ -4,20 +4,9 @@ set -eu
 FFMPEG_MODULE_PATH="${MEDIA3_PATH}/libraries/decoder_ffmpeg/src/main"
 GD_PATH="${MEDIA3_PATH}/libraries/decoder_ffmpeg/build.gradle.kts"
 
-echo "
-android {
-    namespace = \"androidx.media3.decoder.ffmpeg\"
-
-    publishing {
-        singleVariant(\"release\") {
-            withSourcesJar()
-        }
-    }
-}
-extra[\"releaseArtifactId\"] = \"media3-decode-ffmpeg\"
-extra[\"releaseName\"] = \"Media3 ffmpeg module\"
-apply(from = \"../../publish.gradle.kts\")
-">>"${GD_PATH}"
+echo '
+apply(plugin = "media3.publish")
+'>>"${GD_PATH}"
 
 #cat "${GD_PATH}"
 
