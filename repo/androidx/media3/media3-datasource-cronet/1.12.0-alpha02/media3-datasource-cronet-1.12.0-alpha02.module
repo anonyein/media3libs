@@ -1,0 +1,152 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "androidx.media3",
+    "module": "media3-datasource-cronet",
+    "version": "1.12.0-alpha02",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.chromium.net",
+          "module": "cronet-api",
+          "version": {
+            "requires": "500.0.2"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-common",
+          "version": {
+            "requires": "1.12.0-alpha02"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-datasource",
+          "version": {
+            "requires": "1.12.0-alpha02"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "media3-datasource-cronet-1.12.0-alpha02.aar",
+          "url": "media3-datasource-cronet-1.12.0-alpha02.aar",
+          "size": 22234,
+          "sha512": "38fb075a316fa83504e484b33c271891d9a4d30781d70363ed80fbe3b7a98b550a348b33a0cc0bb87b2c27f6c93b7d5cf0b13c591f6a00261a27aa4caebfafb0",
+          "sha256": "e528efb1294919ad2a1f45569f091b4679c34a770d239c21d3ab4ad44310a561",
+          "sha1": "16ceb50bdc283c0fda805fad1e94c7244cb71c06",
+          "md5": "74cdbca7d2d751ef6fbd0b17e58e8363"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.google.android.gms",
+          "module": "play-services-cronet",
+          "version": {
+            "requires": "18.0.1"
+          }
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "org.chromium.net",
+          "module": "cronet-api",
+          "version": {
+            "requires": "500.0.2"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-common",
+          "version": {
+            "requires": "1.12.0-alpha02"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-datasource",
+          "version": {
+            "requires": "1.12.0-alpha02"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "media3-datasource-cronet-1.12.0-alpha02.aar",
+          "url": "media3-datasource-cronet-1.12.0-alpha02.aar",
+          "size": 22234,
+          "sha512": "38fb075a316fa83504e484b33c271891d9a4d30781d70363ed80fbe3b7a98b550a348b33a0cc0bb87b2c27f6c93b7d5cf0b13c591f6a00261a27aa4caebfafb0",
+          "sha256": "e528efb1294919ad2a1f45569f091b4679c34a770d239c21d3ab4ad44310a561",
+          "sha1": "16ceb50bdc283c0fda805fad1e94c7244cb71c06",
+          "md5": "74cdbca7d2d751ef6fbd0b17e58e8363"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "media3-datasource-cronet-1.12.0-alpha02-sources.jar",
+          "url": "media3-datasource-cronet-1.12.0-alpha02-sources.jar",
+          "size": 16741,
+          "sha512": "9b50304e3075e275d1d9e46d471f12fe1627e725b2e5dd23ae23f3e832c9271ba367828dc2e80908381a5d50b4251e09b759c4e96702cb1b6aab5981b26116b6",
+          "sha256": "e6124cd6900ee901e5dbc1ca8b48349ca910f21c19576441c71000b23f6611fe",
+          "sha1": "04be1754e53aec571da46b6a15214e048792afe4",
+          "md5": "290715c1b2ac8a8222bc0935b167869f"
+        }
+      ]
+    }
+  ]
+}

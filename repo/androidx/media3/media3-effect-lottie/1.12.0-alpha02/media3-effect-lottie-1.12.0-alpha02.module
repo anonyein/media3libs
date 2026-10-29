@@ -1,0 +1,145 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "androidx.media3",
+    "module": "media3-effect-lottie",
+    "version": "1.12.0-alpha02",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.media3",
+          "module": "media3-common",
+          "version": {
+            "requires": "1.12.0-alpha02"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-effect",
+          "version": {
+            "requires": "1.12.0-alpha02"
+          }
+        },
+        {
+          "group": "com.airbnb.android",
+          "module": "lottie",
+          "version": {
+            "requires": "6.6.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "media3-effect-lottie-1.12.0-alpha02.aar",
+          "url": "media3-effect-lottie-1.12.0-alpha02.aar",
+          "size": 5650,
+          "sha512": "5ccdcc6933025953e564f9e86fcc5a9032530728f8967a3594e82c8f0c18bb9e9d1b81ce349fceed010bfdbbceea7ced8d69566806ca0ef16a10a77c148169a4",
+          "sha256": "ee9db1d8fbe1201ec7310fc3bba52e06dc43aca1bbbc16a42e1b9dcac110c335",
+          "sha1": "7f1f388df654ecb9410746f1d0b16ff356b878e6",
+          "md5": "c56b4baeeab72263aa5a3c3b93e7be1e"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-common",
+          "version": {
+            "requires": "1.12.0-alpha02"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-effect",
+          "version": {
+            "requires": "1.12.0-alpha02"
+          }
+        },
+        {
+          "group": "com.airbnb.android",
+          "module": "lottie",
+          "version": {
+            "requires": "6.6.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "media3-effect-lottie-1.12.0-alpha02.aar",
+          "url": "media3-effect-lottie-1.12.0-alpha02.aar",
+          "size": 5650,
+          "sha512": "5ccdcc6933025953e564f9e86fcc5a9032530728f8967a3594e82c8f0c18bb9e9d1b81ce349fceed010bfdbbceea7ced8d69566806ca0ef16a10a77c148169a4",
+          "sha256": "ee9db1d8fbe1201ec7310fc3bba52e06dc43aca1bbbc16a42e1b9dcac110c335",
+          "sha1": "7f1f388df654ecb9410746f1d0b16ff356b878e6",
+          "md5": "c56b4baeeab72263aa5a3c3b93e7be1e"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "media3-effect-lottie-1.12.0-alpha02-sources.jar",
+          "url": "media3-effect-lottie-1.12.0-alpha02-sources.jar",
+          "size": 3981,
+          "sha512": "3fbcbdd6760802f54c2442ccfdfe1e21062b702010ce7a94bf4cf2187f67eae008c5ca998002f7387193cdb2bdbe0da9a8093f8271ad6987c0804191abfe9ffc",
+          "sha256": "f04dd1b367a0252b5ad0cba8d76a0c2162cbc5b35da2d6aa73e2146003e4592c",
+          "sha1": "1a8e99dca201079cabb9ee9d7a3920b080078a98",
+          "md5": "aba4b6a4266c61c8f93e79fa47185d15"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "androidx.media3",
+    "module": "media3-datasource-ktor",
+    "version": "1.12.0-alpha02",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-android",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-core",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-common",
+          "version": {
+            "requires": "1.12.0-alpha02"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-datasource",
+          "version": {
+            "requires": "1.12.0-alpha02"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "media3-datasource-ktor-1.12.0-alpha02.aar",
+          "url": "media3-datasource-ktor-1.12.0-alpha02.aar",
+          "size": 25324,
+          "sha512": "2d24a582e23840545ebaaaedababc9b814354199039638475b4850b640a6ca1a2643079bde31b3f2ef995e88c9748d854628714db794efd3f1a0ce7c363ff08a",
+          "sha256": "3ff6f71475d3fb99970a04de431b8550fbe5fb6eb1b01c38275cefbc53379a9b",
+          "sha1": "1b22c20b02acf32ef25f344b1f73babc0a573b44",
+          "md5": "984e5e966d5b4bbb9b95b9c745c1b84e"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-android",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-core",
+          "version": {
+            "requires": "3.5.1"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-common",
+          "version": {
+            "requires": "1.12.0-alpha02"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-datasource",
+          "version": {
+            "requires": "1.12.0-alpha02"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "media3-datasource-ktor-1.12.0-alpha02.aar",
+          "url": "media3-datasource-ktor-1.12.0-alpha02.aar",
+          "size": 25324,
+          "sha512": "2d24a582e23840545ebaaaedababc9b814354199039638475b4850b640a6ca1a2643079bde31b3f2ef995e88c9748d854628714db794efd3f1a0ce7c363ff08a",
+          "sha256": "3ff6f71475d3fb99970a04de431b8550fbe5fb6eb1b01c38275cefbc53379a9b",
+          "sha1": "1b22c20b02acf32ef25f344b1f73babc0a573b44",
+          "md5": "984e5e966d5b4bbb9b95b9c745c1b84e"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "media3-datasource-ktor-1.12.0-alpha02-sources.jar",
+          "url": "media3-datasource-ktor-1.12.0-alpha02-sources.jar",
+          "size": 4923,
+          "sha512": "3a9c126d78792da47fb0d005602ae0debf746da37574f5d66f00e2a7bb9d0e66144bfeee27d562642adca3180aeaa3adf369070004984f7fe3f69c15a724dbac",
+          "sha256": "54310011b7de05672b61d0233aac417927ecf4b813f3a849868b8b80eae85e6b",
+          "sha1": "2750f96ec52f4f47854acc92f4f2c8d5f1ae6374",
+          "md5": "32b482b80ef1cdd37b9f07ad2e442e67"
+        }
+      ]
+    }
+  ]
+}
