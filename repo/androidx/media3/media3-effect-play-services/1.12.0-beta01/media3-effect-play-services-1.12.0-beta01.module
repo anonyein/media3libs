@@ -1,0 +1,138 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "androidx.media3",
+    "module": "media3-effect-play-services",
+    "version": "1.12.0-beta01",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.media3",
+          "module": "media3-common",
+          "version": {
+            "requires": "1.12.0-beta01"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "media3-effect-play-services-1.12.0-beta01.aar",
+          "url": "media3-effect-play-services-1.12.0-beta01.aar",
+          "size": 43643,
+          "sha512": "866fa99d6977797b6dde9b35587b8e0d3e84260d892161c774e52ef65377e9a746ab4508a53f66e0c3f94d67575cb0e0267946ea53b7de726df6f2ee70415dc4",
+          "sha256": "d4c73b54b33abf70edf9669f773fc5fffb3608fa1cfb1cf1c3f5992ef133e5b0",
+          "sha1": "994affac3b6c3ae6d53868bcf6688ed83c705afc",
+          "md5": "0892e4f8773a9397b3665c4a6d5ae29f"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "androidx.concurrent",
+          "module": "concurrent-futures",
+          "version": {
+            "requires": "1.2.0"
+          }
+        },
+        {
+          "group": "com.google.guava",
+          "module": "guava",
+          "version": {
+            "requires": "33.3.1-android"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-effect",
+          "version": {
+            "requires": "1.12.0-beta01"
+          }
+        },
+        {
+          "group": "com.google.android.gms",
+          "module": "play-services-media-effect-enhancement",
+          "version": {
+            "requires": "16.0.0-beta08"
+          }
+        },
+        {
+          "group": "com.google.android.gms",
+          "module": "play-services-media-effect-studiosound",
+          "version": {
+            "requires": "16.0.0-beta02"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-common",
+          "version": {
+            "requires": "1.12.0-beta01"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "media3-effect-play-services-1.12.0-beta01.aar",
+          "url": "media3-effect-play-services-1.12.0-beta01.aar",
+          "size": 43643,
+          "sha512": "866fa99d6977797b6dde9b35587b8e0d3e84260d892161c774e52ef65377e9a746ab4508a53f66e0c3f94d67575cb0e0267946ea53b7de726df6f2ee70415dc4",
+          "sha256": "d4c73b54b33abf70edf9669f773fc5fffb3608fa1cfb1cf1c3f5992ef133e5b0",
+          "sha1": "994affac3b6c3ae6d53868bcf6688ed83c705afc",
+          "md5": "0892e4f8773a9397b3665c4a6d5ae29f"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "media3-effect-play-services-1.12.0-beta01-sources.jar",
+          "url": "media3-effect-play-services-1.12.0-beta01-sources.jar",
+          "size": 23440,
+          "sha512": "37f82606d708e46f38f430663641b5f54cbb02c576f42d8e66ced56553a52093285a15a1bd2312b77d4a02dbcd6fb8a2555455328b291db4d0febe2b39d477fa",
+          "sha256": "bd55a92004b648caa449c0380242ff62e63a9e05dcbcf4a79e009193480dba1e",
+          "sha1": "9980a58185844086c01215ceee728a362f1fa0c9",
+          "md5": "f9ae3e424b14a904d9fa234fa563fd1d"
+        }
+      ]
+    }
+  ]
+}
