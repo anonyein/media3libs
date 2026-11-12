@@ -1,6 +1,6 @@
 #!/bin/bash
 # Apply rabbitknight/media PR 1591 (ExperimentalFfmpegVideoRenderer + Hi10P
-# software decoding) onto the androidx/media 1.11.1 checkout.
+# software decoding) onto the androidx/media 1.12.0-beta01 checkout.
 #
 # Scope: libraries/decoder_ffmpeg (video decoder/renderer/JNI/libyuv build) +
 # libraries/common (VIDEO_PRORES constant required by FfmpegLibrary.getCodecName).
@@ -24,7 +24,7 @@ grep -q "libyuv" libraries/decoder_ffmpeg/src/main/jni/CMakeLists.txt
 grep -q "VIDEO_PRORES" libraries/common/src/main/java/androidx/media3/common/MimeTypes.java
 
 # 16 KB ELF alignment for the other extension JNI libs (Android 15+ 16KB-page
-# devices). Upstream 1.11.1 CMakeLists lack it; all JNI .so are SHARED targets
+# devices). All JNI .so are SHARED targets
 # inside each module's CMake project, so the shared linker flag covers them.
 for module in decoder_av1 decoder_flac decoder_opus decoder_vp9 decoder_iamf; do
   cmake_file="libraries/${module}/src/main/jni/CMakeLists.txt"
@@ -33,4 +33,4 @@ for module in decoder_av1 decoder_flac decoder_opus decoder_vp9 decoder_iamf; do
   fi
 done
 
-echo "PR 1591 (FfmpegVideoRenderer + Hi10P) patched onto media 1.11.1."
+echo "PR 1591 (FfmpegVideoRenderer + Hi10P) patched onto media $(git describe --tags --always)."

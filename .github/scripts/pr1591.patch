@@ -202,7 +202,6 @@ index 00000000000..bffff199505
 +
 +import android.view.Surface;
 +
-+import androidx.annotation.Nullable;
 +import androidx.annotation.VisibleForTesting;
 +import androidx.media3.common.C;
 +import androidx.media3.common.Format;
@@ -216,6 +215,7 @@ index 00000000000..bffff199505
 +import java.nio.ByteBuffer;
 +import java.util.ArrayDeque;
 +import java.util.List;
++import org.jspecify.annotations.Nullable;
 +
 +/**
 + * Ffmpeg Video decoder.
@@ -513,8 +513,7 @@ diff --git a/libraries/decoder_ffmpeg/src/main/java/androidx/media3/decoder/ffmp
 index 2f02c2b7835..f8589a0ec43 100644
 --- a/libraries/decoder_ffmpeg/src/main/java/androidx/media3/decoder/ffmpeg/ExperimentalFfmpegVideoRenderer.java
 +++ b/libraries/decoder_ffmpeg/src/main/java/androidx/media3/decoder/ffmpeg/ExperimentalFfmpegVideoRenderer.java
-@@ -24,8 +24,11 @@
- import androidx.annotation.Nullable;
+@@ -24,7 +24,10 @@
  import androidx.media3.common.C;
  import androidx.media3.common.Format;
 +import androidx.media3.common.MimeTypes;
@@ -525,11 +524,12 @@ index 2f02c2b7835..f8589a0ec43 100644
  import androidx.media3.decoder.CryptoConfig;
  import androidx.media3.decoder.Decoder;
  import androidx.media3.decoder.DecoderInputBuffer;
-@@ -34,19 +37,42 @@
+@@ -34,20 +37,43 @@
  import androidx.media3.exoplayer.RendererCapabilities;
  import androidx.media3.exoplayer.video.DecoderVideoRenderer;
  import androidx.media3.exoplayer.video.VideoRendererEventListener;
 -import java.util.Objects;
+ import org.jspecify.annotations.Nullable;
  
  // TODO: Merge actual implementation in https://github.com/androidx/media/pull/1591.
  /**
@@ -711,14 +711,6 @@ diff --git a/libraries/decoder_ffmpeg/src/main/java/androidx/media3/decoder/ffmp
 index 9ef7b6c8efb..b0d6d8a2c44 100644
 --- a/libraries/decoder_ffmpeg/src/main/java/androidx/media3/decoder/ffmpeg/FfmpegLibrary.java
 +++ b/libraries/decoder_ffmpeg/src/main/java/androidx/media3/decoder/ffmpeg/FfmpegLibrary.java
-@@ -22,6 +22,7 @@
- import androidx.media3.common.util.LibraryLoader;
- import androidx.media3.common.util.Log;
- import androidx.media3.common.util.UnstableApi;
-+
- import org.checkerframework.checker.nullness.qual.MonotonicNonNull;
- 
- /** Configures and queries the underlying native library. */
 @@ -95,10 +96,13 @@ public static int getInputBufferPaddingSize() {
     *
     * @param mimeType The MIME type to check.
