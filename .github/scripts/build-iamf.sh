@@ -7,9 +7,14 @@ IAMF_MODULE_PATH="${MEDIA3_PATH}/libraries/decoder_iamf/src/main"
 GD_PATH="${MEDIA3_PATH}/libraries/decoder_iamf/build.gradle.kts"
 
 ## Fetch libiamf
+IAMF_REVISION=$(sed -nE 's/.*--revision=([0-9a-f]{40}).*/\1/p' "${MEDIA3_PATH}/libraries/decoder_iamf/README.md")
+if [[ ! "$IAMF_REVISION" =~ ^[0-9a-f]{40}$ ]]; then
+  echo "Could not find a unique tested iamf-tools revision in Media3's decoder_iamf/README.md" >&2
+  exit 1
+fi
+echo "Using Media3's tested iamf-tools revision: ${IAMF_REVISION}"
 cd "${IAMF_MODULE_PATH}/jni"
-# Use the revision tested by Media3 1.12.0-beta01.
-git clone --depth=1 --revision=e552e7d6d8b55530d201fd2764ca7e12d2c66cd6 https://github.com/AOMediaCodec/iamf-tools.git iamf_tools
+git clone --depth=1 --revision="${IAMF_REVISION}" https://github.com/AOMediaCodec/iamf-tools.git iamf_tools
 
 cd "${IAMF_MODULE_PATH}/jni"
 ./build_iamf_tools.sh "${IAMF_MODULE_PATH}" "${NDK_PATH}"
