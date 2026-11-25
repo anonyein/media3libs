@@ -1,0 +1,138 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "androidx.media3",
+    "module": "media3-datasource-rtmp",
+    "version": "1.12.0-rc01",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.media3",
+          "module": "media3-common",
+          "version": {
+            "requires": "1.12.0-rc01"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-datasource",
+          "version": {
+            "requires": "1.12.0-rc01"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "media3-datasource-rtmp-1.12.0-rc01.aar",
+          "url": "media3-datasource-rtmp-1.12.0-rc01.aar",
+          "size": 4193,
+          "sha512": "0c7e5637f399360e3cc9832b23003145bf51ac4ffbead47c81109cd6f82bb2318415608ebecd482b00e95808c81b538482b118cd25ddfc7ddfb9df380319b5eb",
+          "sha256": "5e25581a47e7d241ed32d79d779181ff797673f6d93e01796537ae61717e4b29",
+          "sha1": "799b011d63007c849555c0bb6d1088030175564c",
+          "md5": "c346685afff902549f29a15d8cf5b901"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.antmedia",
+          "module": "rtmp-client",
+          "version": {
+            "requires": "3.2.0"
+          }
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-common",
+          "version": {
+            "requires": "1.12.0-rc01"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-datasource",
+          "version": {
+            "requires": "1.12.0-rc01"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "media3-datasource-rtmp-1.12.0-rc01.aar",
+          "url": "media3-datasource-rtmp-1.12.0-rc01.aar",
+          "size": 4193,
+          "sha512": "0c7e5637f399360e3cc9832b23003145bf51ac4ffbead47c81109cd6f82bb2318415608ebecd482b00e95808c81b538482b118cd25ddfc7ddfb9df380319b5eb",
+          "sha256": "5e25581a47e7d241ed32d79d779181ff797673f6d93e01796537ae61717e4b29",
+          "sha1": "799b011d63007c849555c0bb6d1088030175564c",
+          "md5": "c346685afff902549f29a15d8cf5b901"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "media3-datasource-rtmp-1.12.0-rc01-sources.jar",
+          "url": "media3-datasource-rtmp-1.12.0-rc01-sources.jar",
+          "size": 3748,
+          "sha512": "12653554b9ca2c33e3047b18e2c5810575f0ab639b901b608c3d920d1df93d17abe69ba43b6f6d03cad52a6ecd3a8ac58b1eeba83a787bd28913c9cae7c6ab3c",
+          "sha256": "6b8b789a6ed35d513ce58b48a866f5028e9d68b01d266dd400c80ef7d9949b15",
+          "sha1": "f2ccc617e6cb3c99f563f85feb7fd549d1c5697a",
+          "md5": "ff130803c944182ff45e476eb6374dd2"
+        }
+      ]
+    }
+  ]
+}

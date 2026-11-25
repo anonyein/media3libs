@@ -1,0 +1,131 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "androidx.media3",
+    "module": "media3-common-ktx",
+    "version": "1.12.0-rc01",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.media3",
+          "module": "media3-common",
+          "version": {
+            "requires": "1.12.0-rc01"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "media3-common-ktx-1.12.0-rc01.aar",
+          "url": "media3-common-ktx-1.12.0-rc01.aar",
+          "size": 16173,
+          "sha512": "a9a687986d498d5078d22e8630c92a42708800c56e1cc7e9eafabdd70c482c2251de199cf944bc5820d4aae0ac88f35b4fbf1f469ddf442e94ac9d5244bf58bf",
+          "sha256": "df211d91e5100a8a4afbd5048d35bc11c2b724bd6058fc0bc16d43f4f0f84621",
+          "sha1": "7ce302f346b2e894a1d8eaac3aa6b1878cf40d90",
+          "md5": "e6563038429c2b7cbbcbf94b33de0155"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.core",
+          "module": "core",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "androidx.media3",
+          "module": "media3-common",
+          "version": {
+            "requires": "1.12.0-rc01"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "media3-common-ktx-1.12.0-rc01.aar",
+          "url": "media3-common-ktx-1.12.0-rc01.aar",
+          "size": 16173,
+          "sha512": "a9a687986d498d5078d22e8630c92a42708800c56e1cc7e9eafabdd70c482c2251de199cf944bc5820d4aae0ac88f35b4fbf1f469ddf442e94ac9d5244bf58bf",
+          "sha256": "df211d91e5100a8a4afbd5048d35bc11c2b724bd6058fc0bc16d43f4f0f84621",
+          "sha1": "7ce302f346b2e894a1d8eaac3aa6b1878cf40d90",
+          "md5": "e6563038429c2b7cbbcbf94b33de0155"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "media3-common-ktx-1.12.0-rc01-sources.jar",
+          "url": "media3-common-ktx-1.12.0-rc01-sources.jar",
+          "size": 5049,
+          "sha512": "946c47cb850516c8d1ab557d5c19938b567f7147dbe0639a0ac88fe3a26a522854861106dd51964e626f3bd442941e782c3cd5383bf531341e015a9cb2e0c676",
+          "sha256": "283f87423d0300bac41b9183d8f426ce680ffc0bed1eae78a9dff097a48b8d19",
+          "sha1": "74c4a2c5ff501b97e4ebae3f796eccc962c436f8",
+          "md5": "b99df86288f62ce5e8285de3eeff0dd6"
+        }
+      ]
+    }
+  ]
+}
