@@ -28,7 +28,27 @@ ${ROOT_DIR}/.github/scripts/build-opus.sh
 ${ROOT_DIR}/.github/scripts/build-vp9.sh
 ${ROOT_DIR}/.github/scripts/build-iamf.sh
 cd ${MEDIA3_PATH}
-./gradlew publishToMavenLocal
+(
+  set -o pipefail
+  gradle_log=$(mktemp)
+  trap 'rm -f "$gradle_log"' EXIT
+
+  for attempt in 1 2 3; do
+    if ./gradlew --console=plain publishToMavenLocal 2>&1 | tee "$gradle_log"; then
+      exit 0
+    else
+      status=$?
+    fi
+
+    if (( attempt == 3 )) || ! grep -qF 'Received status code 429' "$gradle_log"; then
+      exit "$status"
+    fi
+
+    delay=$((30 * attempt))
+    echo "Gradle dependency download was rate limited (HTTP 429); retrying in ${delay}s." >&2
+    sleep "$delay"
+  done
+)
 
 
 
