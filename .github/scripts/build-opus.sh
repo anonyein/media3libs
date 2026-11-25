@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 echo "Build Opus"
 
@@ -15,7 +16,8 @@ cd "${OPUS_MODULE_PATH}/jni"
 # via ADRP; those symbols are preemptible in a shared-library link, so
 # lld fails with "relocation R_AARCH64_ADR_PREL_PG_HI21 ... recompile with
 # -fPIC" when linking libopusV2JNI.so (arm64-v8a).
-git clone --depth=1 -b v1.6.1 https://gitlab.xiph.org/xiph/opus.git libopus
+git clone --depth=1 -b v1.6.1 https://github.com/xiph/opus.git libopus
+test -f libopus/CMakeLists.txt
 
 ## Enable publishing
 echo '

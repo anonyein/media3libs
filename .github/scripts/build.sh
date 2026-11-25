@@ -56,6 +56,23 @@ cd ${ROOT_DIR}
 mkdir -p repo
 mv ~/.m2/repository/* repo
 
+# Check the published AAR before it is uploaded or committed to the repo branch.
+opus_aars=(repo/androidx/media3/media3-decoder-opus/*/*.aar)
+for opus_aar in "${opus_aars[@]}"; do
+  if [[ ! -f "$opus_aar" ]]; then
+    echo 'Missing published media3-decoder-opus AAR.' >&2
+    exit 1
+  fi
+
+  aar_entries=$(unzip -Z1 "$opus_aar")
+  for abi in armeabi-v7a arm64-v8a x86 x86_64; do
+    library="jni/${abi}/libopusV2JNI.so"
+    if ! grep -Fxq "$library" <<< "$aar_entries"; then
+      echo "Missing $library in $opus_aar" >&2
+      exit 1
+    fi
+  done
+done
 
 git config --local user.email "github-action@users.noreply.github.com"
 git config --local user.name "GitHub Action"
